@@ -17,7 +17,7 @@ export default {
   name: "ChartByCountry",
   data(){
     return{
-      data: undefined
+      country:[]
     }
   },
   mounted() {
@@ -33,7 +33,7 @@ export default {
           type: 'pie'
         },
         title: {
-          text: 'Browser market shares in January, 2018'
+          text: 'Ufo-Ansichten pro Land, 1906 - 2017'
         },
         tooltip: {
           pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -57,34 +57,25 @@ export default {
           name: 'Brands',
           colorByPoint: true,
           data: [{
-            name: 'Chrome',
+            name: 'USA',
             y: 61.41,
             sliced: true,
             selected: true
           }, {
-            name: 'Internet Explorer',
+            name: 'Australien',
             y: 11.84
           }, {
-            name: 'Firefox',
+            name: 'Marco',
             y: 10.85
           }, {
-            name: 'Edge',
+            name: 'Kroatien',
             y: 4.67
           }, {
-            name: 'Safari',
+            name: 'Österreich',
             y: 4.18
           }, {
-            name: 'Sogou Explorer',
-            y: 1.64
-          }, {
-            name: 'Opera',
-            y: 1.6
-          }, {
-            name: 'QQ',
-            y: 1.2
-          }, {
-            name: 'Other',
-            y: 2.61
+            name: 'Deutschland',
+            y: 7.05
           }]
         }]
       });
