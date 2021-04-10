@@ -14,7 +14,8 @@ export default {
   name: "SightsMap",
   data() {
     return {
-      data: undefined
+      data: undefined,
+      input: undefined
     }
   },
   mounted() {
@@ -2193,7 +2194,9 @@ export default {
 
       this.data.forEach(element =>
           element.code3 = getCountryISO3(element.code)
-      );
+      0
+    )
+      ;
 
       Highcharts.mapChart('container', {
         chart: {

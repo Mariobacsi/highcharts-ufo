@@ -14,10 +14,18 @@ export default {
   name: "SightsPerMonth",
   data() {
     return {
-      data: undefined
+      data: undefined,
+      input: undefined
     }
   },
   mounted() {
+    this.data = [
+
+    ]
+
+    // this.input.forEach(element =>
+    //     switch ()
+    // );
     this.getData()
   },
   methods: {
