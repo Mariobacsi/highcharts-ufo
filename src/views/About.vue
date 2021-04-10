@@ -1,12 +1,12 @@
 <template>
   <div class="about">
     <h1>This is an about page</h1>
-    <AllSightsPerMonth></AllSightsPerMonth>
+    <AllSightsPerYear></AllSightsPerYear>
   </div>
 </template>
 <script>
-import AllSightsPerMonth from "../components/AllSightsPerMonth";
+import AllSightsPerYear from "../components/AllSightsPerYear";
 export default {
-  components: {AllSightsPerMonth}
+  components: {AllSightsPerYear}
 }
 </script>

@@ -1,10 +1,10 @@
 <template>
-  <figure class="highcharts-figure">
+  <figure className="highcharts-figure">
     <div id="container"></div>
-    <p class="highcharts-description">
-      Basic line chart showing trends in a dataset. This chart includes the
-      <code>series-label</code> module, which adds a label to each line for
-      enhanced readability.
+    <p className="highcharts-description">
+      Pie charts are very popular for showing a compact overview of a
+      composition or comparison. While they can be harder to read than
+      column charts, they remain a popular choice for small datasets.
     </p>
   </figure>
 </template>
@@ -14,7 +14,7 @@ import Highchart from 'highcharts/highcharts.js'
 
 
 export default {
-  name: "AllSightsPerMonth",
+  name: "AllSightsPerYear",
   data() {
     return {
       data: undefined
@@ -28,22 +28,22 @@ export default {
       Highchart.chart('container', {
 
         title: {
-          text: 'Solar Employment Growth by Sector, 2010-2016'
+          text: 'UFO Sichtungen pro Jahr, 1906-2017'
         },
 
         subtitle: {
-          text: 'Source: thesolarfoundation.com'
+          text: 'Quelle: https://github.com/planetsig/ufo-reports/blob/master/csv-data/ufo-complete-geocoded-time-standardized.csv'
         },
 
         yAxis: {
           title: {
-            text: 'Number of Employees'
+            text: 'Anzahl der UFO Sichtungen'
           }
         },
 
         xAxis: {
           accessibility: {
-            rangeDescription: 'Range: 2010 to 2017'
+            rangeDescription: 'Range: 1906 to 2017'
           }
         },
 
@@ -58,25 +58,13 @@ export default {
             label: {
               connectorAllowed: false
             },
-            pointStart: 2010
+            pointStart: 1906
           }
         },
 
         series: [{
-          name: 'Installation',
-          data: [43934, 52503, 57177, 69658, 97031, 119931, 137133, 154175]
-        }, {
-          name: 'Manufacturing',
-          data: [24916, 24064, 29742, 29851, 32490, 30282, 38121, 40434]
-        }, {
-          name: 'Sales & Distribution',
-          data: [11744, 17722, 16005, 19771, 20185, 24377, 32147, 39387]
-        }, {
-          name: 'Project Development',
-          data: [null, null, 7988, 12169, 15112, 22452, 34400, 34227]
-        }, {
-          name: 'Other',
-          data: [12908, 5948, 8105, 11248, 8989, 11816, 18274, 18111]
+          name: 'UFO Sichtungen pro Jahr',
+          data: [ 1, 2, 3, 5, 1, 2, 3, 5, 1, 2, 3, 5, 1, 2, 3, 5, 1, 2, 3, 5, 1, 2, 3, 5, 1, 2, 3, 5, 1, 2, 3, 5, 1, 2, 3, 5, 1, 2, 3, 5, 1, 2, 3, 5, 1, 2, 3, 5, 1, 2, 3, 5, 1, 2, 3, 5, 1, 2, 3, 5, 1, 2, 3, 5, 1, 2, 3, 5, 1, 2, 3, 5, 1, 2, 3, 5, 1, 2, 3, 5, 1, 2, 3, 5, 1, 2, 3, 5, 1, 2, 3, 5, 1, 2, 3, 5, 1, 2, 3, 5, 1, 2, 3, 5, 1, 2, 3, 5, 1, 2, 3, 5, 1, 2, 3, 5, 1, 2, 3, 5, 1, 2, 3, 5, 1, 2, 3, 5, 1, 2, 3, 5, 1, 2, 3, 5, 1, 2, 3, 5]
         }],
 
         responsive: {
