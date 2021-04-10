@@ -1,127 +1,101 @@
 <template>
-  <div>
-    <!--    <div id="statBar">
-          <div v-tooltip.hover:top="'Gescannte Rechnungen pro Woche'">
-            {{ data.scanned.length }}
-          </div>
-          <div v-tooltip.hover:top="'Gekaufte Rabatte pro Woche'">
-            {{ data.bought.length }}
-          </div>
-          <div v-tooltip.hover:top="'Eingelöste Rabatte pro Woche'">
-            {{ data.used.length }}
-          </div>
-        </div>-->
-    <div id="UserAction" class="col mt-1 mb-1"/>
-  </div>
+  <figure class="highcharts-figure">
+    <div id="container"></div>
+    <p class="highcharts-description">
+      Basic line chart showing trends in a dataset. This chart includes the
+      <code>series-label</code> module, which adds a label to each line for
+      enhanced readability.
+    </p>
+  </figure>
 </template>
 
 <script>
 import Highchart from 'highcharts/highcharts.js'
+
+
 export default {
-  name: "AllSightsPerMonths",
+  name: "AllSightsPerMonth",
   data() {
     return {
       data: undefined
     }
   },
-  created() {
-  },
   mounted() {
-    this.loadData()
+    this.basicChart()
   },
   methods: {
-    loadData() {
-      this.$http.post(this.$store.state.url + '/getStatistik', {
-        hash: this.$store.state.user.token,
-        companyName: this.$store.state.company.companyName
-      }).then(response => {
-        console.debug(response)
-        this.data = response.data
-        this.basicChart()
-      })
-    },
     basicChart() {
-      this.Chart = Highchart.chart('UserAction', {
-        chart: {
-          type: 'line'
-        },
+      Highchart.chart('container', {
+
         title: {
-          text: 'User Aktionen'
+          text: 'Solar Employment Growth by Sector, 2010-2016'
         },
-        xAxis: {
-          type: 'datetime',
-          units: [
-            ['day', [1]],
-            ['month', [1]]
-          ],
-          accessibility: {
-            rangeDescription: 'Range: Jan 1st 2017 to Dec 31 2017.'
-          }
+
+        subtitle: {
+          text: 'Source: thesolarfoundation.com'
         },
+
         yAxis: {
           title: {
-            text: 'Aktionen'
-          },
-          labels: {
-            formatter: function () {
-              return this.value
-            }
+            text: 'Number of Employees'
           }
         },
-        tooltip: {
-          crosshairs: true,
-          shared: true,
-          xDateFormat: "%e.%b"
+
+        xAxis: {
+          accessibility: {
+            rangeDescription: 'Range: 2010 to 2017'
+          }
         },
+
+        legend: {
+          layout: 'vertical',
+          align: 'right',
+          verticalAlign: 'middle'
+        },
+
         plotOptions: {
-          areaspline: {
-            marker: {
-              enabled: false,
-              radius: 2,
-              states: {
-                hover: {
-                  enabled: true
-                }
+          series: {
+            label: {
+              connectorAllowed: false
+            },
+            pointStart: 2010
+          }
+        },
+
+        series: [{
+          name: 'Installation',
+          data: [43934, 52503, 57177, 69658, 97031, 119931, 137133, 154175]
+        }, {
+          name: 'Manufacturing',
+          data: [24916, 24064, 29742, 29851, 32490, 30282, 38121, 40434]
+        }, {
+          name: 'Sales & Distribution',
+          data: [11744, 17722, 16005, 19771, 20185, 24377, 32147, 39387]
+        }, {
+          name: 'Project Development',
+          data: [null, null, 7988, 12169, 15112, 22452, 34400, 34227]
+        }, {
+          name: 'Other',
+          data: [12908, 5948, 8105, 11248, 8989, 11816, 18274, 18111]
+        }],
+
+        responsive: {
+          rules: [{
+            condition: {
+              maxWidth: 500
+            },
+            chartOptions: {
+              legend: {
+                layout: 'horizontal',
+                align: 'center',
+                verticalAlign: 'bottom'
               }
             }
-          }
-        },
-        series: [{
-          name: 'Rechnungen eingescannt',
-          data: this.data.scanned.reverse()
-        }, {
-          name: 'Rabatte gekauft',
-          data: this.data.bought.reverse()
-        }, {
-          name: 'Rabatte eingelöst',
-          data: this.data.used.reverse()
-        }, {
-          name: 'Seite geöffnet',
-          data: this.data.opened.reverse()
-        }]
-      })
+          }]
+        }
+
+      });
     }
   }
 }
 </script>
-
-<style scoped lang="scss">
-#statBar {
-  display: flex;
-  flex-direction: row;
-  background-color: #2b2b2b;
-  color: white;
-  margin: auto;
-  width: fit-content;
-  padding: .5em;
-  border-radius: 25px;
-  & div {
-    padding: 0 .5em;
-    border-right: white solid 2px;
-    font-weight: bold;
-    &:last-child {
-      border: none;
-    }
-  }
-}
-</style>
