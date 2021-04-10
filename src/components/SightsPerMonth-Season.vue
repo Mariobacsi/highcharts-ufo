@@ -12,28 +12,58 @@ import Highchart from 'highcharts/highcharts.js'
 
 export default {
   name: "SightsPerMonth",
+  props: ['data'],
   data() {
     return {
-      data: undefined,
       input: undefined
     }
   },
+  created() {
+    this.data.forEach(e => {
+      switch (e[0]) {
+        case 1:
+          e[0] = "Januar"
+          break;
+        case 2:
+          e[0] = "Februar"
+          break;
+        case 3:
+          e[0] = "März"
+          break;
+        case 4:
+          e[0] = "April"
+          break;
+        case 5:
+          e[0] = "Mai"
+          break;
+        case 6:
+          e[0] = "Juni"
+          break;
+        case 7:
+          e[0] = "Juli"
+          break;
+        case 8:
+          e[0] = "August"
+          break;
+        case 9:
+          e[0] = "September"
+          break;
+        case 10:
+          e[0] = "Oktober"
+          break;
+        case 11:
+          e[0] = "November"
+          break;
+        case 12:
+          e[0] = "Dezember"
+          break;
+      }
+    })
+  },
   mounted() {
-    this.data = [
-
-    ]
-
-    // this.input.forEach(element =>
-    //     switch ()
-    // );
-    this.getData()
+    this.basicChart()
   },
   methods: {
-    getData() {
-      this.data = []
-      this.data.januar = 20
-      this.basicChart()
-    },
     basicChart() {
       Highchart.chart('container', {
         chart: {
@@ -66,20 +96,16 @@ export default {
         },
         series: [{
           name: 'Sightings',
-          data: [
-            ['Januar', this.data.januar],
-            ['Februar', 20.8],
-            ['März', 14.9],
-            ['April', 13.7],
-            ['Mai', 13.1],
-            ['Juni', 12.7],
-            ['Juli', 12.4],
-            ['August', 12.2],
-            ['September', 12.0],
-            ['Oktober', 11.7],
-            ['November', 11.5],
-            ['Dezember', 11.2]
-          ],
+          /**
+           * [
+           *  [monat, anz],
+           *  [monat, anz],
+           *  [monat, anz],
+           *  [monat, anz],
+           *  ...
+           * ]
+           */
+          data: this.data,
           dataLabels: {
             enabled: true,
             rotation: -90,
