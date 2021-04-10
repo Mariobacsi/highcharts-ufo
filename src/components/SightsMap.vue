@@ -1,7 +1,7 @@
 <template>
   <div>
     <figure className="highcharts-figure">
-      <div id="container"></div>
+      <div id="containerMaps"></div>
     </figure>
   </div>
 </template>
@@ -28,7 +28,7 @@ export default {
       )
       ;
 
-      Highcharts.mapChart('container', {
+      Highcharts.mapChart('containerMaps', {
         chart: {
           borderWidth: 1,
           map: map
@@ -75,7 +75,7 @@ export default {
 }
 </script>
 <style>
-#container {
+#containerMaps {
   height: 400px;
 }
 
