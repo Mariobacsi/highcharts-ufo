@@ -1,6 +1,6 @@
 <template>
   <figure class="highcharts-figure">
-    <div id="container"></div>
+    <div id="chartByCountry"></div>
     <p class="highcharts-description">
       Pie charts are very popular for showing a compact overview of a
       composition or comparison. While they can be harder to read than
@@ -15,9 +15,9 @@ import Highchart from 'highcharts/highcharts.js'
 
 export default {
   name: "ChartByCountry",
+  props: ['data'], //[country, percentage]
   data(){
     return{
-      country:[]
     }
   },
   mounted() {
@@ -25,7 +25,7 @@ export default {
   },
   methods: {
     basicChart() {
-      Highchart.chart('container', {
+      Highchart.chart('chartByCountry', {
         chart: {
           plotBackgroundColor: null,
           plotBorderWidth: null,
@@ -33,7 +33,10 @@ export default {
           type: 'pie'
         },
         title: {
-          text: 'Ufo-Ansichten pro Land, 1906 - 2017'
+          text: 'Ufo-Ansichten pro Land in Prozent, 1906 - 2017'
+        },
+        subtitle: {
+          text: 'Quelle: <a href="http://statcounter.com" target="_blank">statcounter.com</a>'
         },
         tooltip: {
           pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'

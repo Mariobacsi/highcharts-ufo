@@ -1,12 +1,12 @@
 <template>
   <div class="about">
     <h1>This is an about page</h1>
-    <chart-by-country></chart-by-country>
+    <chart-by-state></chart-by-state>
   </div>
 </template>
 <script>
-import ChartByCountry from "@/components/ChartByCountry";
+import ChartByState from "@/components/ChartAbsoluteByCountry";
 export default {
-  components: {ChartByCountry}
+  components: {ChartByState}
 }
 </script>
