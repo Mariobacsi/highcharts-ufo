@@ -15,50 +15,11 @@ export default {
   props: ['data'],
   data() {
     return {
-      input: undefined
+      dataC: []
     }
   },
   created() {
-    this.data.forEach(e => {
-      switch (e[0]) {
-        case 1:
-          e[0] = "Januar"
-          break;
-        case 2:
-          e[0] = "Februar"
-          break;
-        case 3:
-          e[0] = "März"
-          break;
-        case 4:
-          e[0] = "April"
-          break;
-        case 5:
-          e[0] = "Mai"
-          break;
-        case 6:
-          e[0] = "Juni"
-          break;
-        case 7:
-          e[0] = "Juli"
-          break;
-        case 8:
-          e[0] = "August"
-          break;
-        case 9:
-          e[0] = "September"
-          break;
-        case 10:
-          e[0] = "Oktober"
-          break;
-        case 11:
-          e[0] = "November"
-          break;
-        case 12:
-          e[0] = "Dezember"
-          break;
-      }
-    })
+    this.dataC = this.data
   },
   mounted() {
     this.basicChart()
@@ -105,7 +66,7 @@ export default {
            *  ...
            * ]
            */
-          data: this.data,
+          data: this.dataC,
           dataLabels: {
             enabled: true,
             rotation: -90,
