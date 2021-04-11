@@ -1,9 +1,11 @@
 <template>
   <div id="grid">
     <all-sights-per-year class="card span-5" :data="allSightsPerYear()"></all-sights-per-year>
-    <sights-map class="card span-5" :data="sightsMap()"></sights-map>
+    <sights-map class="card span-5" :data="sightsMap"></sights-map>
     <sights-per-month class="card span-5" :data="sightsPerMonth()"></sights-per-month>
     <world-cloud class="card span-5" :data="allShapes()" ></world-cloud>
+    <chart-by-country class="card span-3" :data="sightsCountry"></chart-by-country>
+    <chart-absolute-by-country class="card span-2" :data="sightsCountry"></chart-absolute-by-country>
   </div>
 </template>
 
@@ -12,18 +14,23 @@ import AllSightsPerYear from "@/components/AllSightsPerYear";
 import SightsMap from "@/components/SightsMap";
 import SightsPerMonth from "@/components/SightsPerMonth-Season";
 import WorldCloud from "@/components/WorldCloud";
+import ChartByCountry from "@/components/ChartByCountry";
+import ChartAbsoluteByCountry from "@/components/ChartAbsoluteByCountry";
 
 export default {
   name: "Root",
-  components: {WorldCloud, SightsPerMonth, SightsMap, AllSightsPerYear},
+  components: {ChartAbsoluteByCountry, ChartByCountry, WorldCloud, SightsPerMonth, SightsMap, AllSightsPerYear},
   data() {
     return {
-      data: []
+      data: [],
+      sightsMap: [],
+      sightsCountry: []
     }
   },
   created() {
     this.data = this.$store.getters.getdata
     console.debug("created", this.data)
+    this.sightsPerCountry()
   },
   methods: {
     allSightsPerYear() {
@@ -104,8 +111,7 @@ export default {
       console.debug("AllShapes", result)
       return result
     },
-    sightsMap() {
-      let result = []
+    sightsPerCountry() {
       let code = []
       let count = []
 
@@ -117,14 +123,21 @@ export default {
         count[code.indexOf(d.Land)]++
       })
 
+
       for (let i = 0; i < code.length; i++) {
-        result.push({
+        this.sightsMap.push({
           z: count[i],
           code: code[i].toUpperCase()
         })
       }
-      console.debug("SightsMap", result)
-      return result
+      console.debug("SightsMap", this.sightsMap)
+
+      for (let i = 0; i < code.length; i++) {
+        let c = "Unbekannt"
+        if (code[i]) c = code[i].toUpperCase()
+        this.sightsCountry.push([c, count[i]])
+      }
+      console.debug("SightsCountry", this.sightsCountry)
     },
     sightsPerMonth: function () {
       let result = []
@@ -150,7 +163,8 @@ export default {
 
       console.debug("SightsPerMonth", result)
       return result
-    }
+    },
+
   }
 }
 </script>

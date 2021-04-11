@@ -81,5 +81,6 @@ body {
   border-radius: .5rem;
   box-shadow: 0 2px 4px #cccccc;
   padding: .5em;
+  width: 95%;
 }
 </style>

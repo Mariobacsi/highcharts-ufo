@@ -21,6 +21,7 @@ export default {
     }
   },
   mounted() {
+    console.debug(this.data)
     this.basicChart()
   },
   methods: {
@@ -59,8 +60,7 @@ export default {
         series: [{
           name: 'Länder',
           colorByPoint: true,
-          data: [ //[country, UFO-Ansichten insgesamt pro Land]
-              ["ad", 1000],["adsad", 200],["addd", 100],["aasd", 150],["aasd", 150]]
+          data: this.data
         }]
       });
     }
