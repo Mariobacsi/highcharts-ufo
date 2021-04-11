@@ -1,7 +1,7 @@
 <template>
   <div>
     <figure className="highcharts-figure">
-      <div id="container"></div>
+      <div id="containerSeason"></div>
     </figure>
   </div>
 </template>
@@ -65,7 +65,7 @@ export default {
   },
   methods: {
     basicChart() {
-      Highchart.chart('container', {
+      Highchart.chart('containerSeason', {
         chart: {
           type: 'column'
         },
@@ -125,7 +125,7 @@ export default {
 }
 </script>
 <style>
-#container {
+#containerSeason {
   height: 400px;
 }
 
