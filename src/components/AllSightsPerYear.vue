@@ -24,7 +24,7 @@ export default {
       Highchart.chart('AllSightsPerYear', {
 
         title: {
-          text: 'UFO Sichtungen pro Jahr, 1906-2017'
+          text: 'UFO Sichtungen pro Jahr, 1906-2014'
         },
 
         subtitle: {
