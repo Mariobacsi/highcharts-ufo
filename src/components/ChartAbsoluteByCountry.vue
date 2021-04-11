@@ -65,7 +65,7 @@ export default {
 
         series: [
           {
-            name: "Browsers",
+            name: "Länder",
             colorByPoint: true,
             data: [ //[Land, UFO-Ansichten insgesamt pro Land]
               ["ad", 4000],["adsad", 4000],["addd", 1000],["aasd", 2000],["adasd", 500],["aasdd", 4000],["aasdd", 7000]
