@@ -1,6 +1,6 @@
 <template>
   <figure className="highcharts-figure">
-    <div id="container"></div>
+    <div id="AllSightsPerYear"></div>
     <p className="highcharts-description">
       Pie charts are very popular for showing a compact overview of a
       composition or comparison. While they can be harder to read than
@@ -15,17 +15,13 @@ import Highchart from 'highcharts/highcharts.js'
 
 export default {
   name: "AllSightsPerYear",
-  data() {
-    return {
-      data: undefined
-    }
-  },
+  props: ['data'],
   mounted() {
     this.basicChart()
   },
   methods: {
     basicChart() {
-      Highchart.chart('container', {
+      Highchart.chart('AllSightsPerYear', {
 
         title: {
           text: 'UFO Sichtungen pro Jahr, 1906-2017'
@@ -64,7 +60,7 @@ export default {
 
         series: [{
           name: 'UFO Sichtungen pro Jahr',
-          data: []
+          data: this.data
         }],
 
         responsive: {

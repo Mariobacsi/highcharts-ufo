@@ -14,12 +14,6 @@ import Axios from 'axios'
 
 export default {
   name: 'App',
-  data() {
-    return {
-      data: undefined,
-      schmutz1: "hallo"
-    }
-  },
   created() {
     this.loadJSON()
   },
@@ -30,7 +24,19 @@ export default {
     loadJSON() {
       Axios.get(process.env.BASE_URL + 'daten.json')
           .then(result => {
-            this.data = result.data
+            let data = result.data
+            console.debug(data)
+            let regex = new RegExp("(\\d+)\\/(\\d+)\\/(\\d+) (\\d+):(\\d+)")
+            data.forEach(e => {
+              let match = regex.exec(e.Datum)
+              e.Tag = match[2]
+              e.Monat = match[1]
+              e.Jahr = match[3]
+              e.Stunde = match[4]
+              e.Minute = match[5]
+            })
+            console.debug(data)
+            this.$store.commit("setData", data)
           })
     }
 
@@ -42,6 +48,10 @@ export default {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  background: #eeeeee;
+}
 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -62,5 +72,16 @@ export default {
       color: #42b983;
     }
   }
+}
+
+.card {
+  background: #ffffff;
+  min-width: 50px;
+  min-height: 50px;
+  display: grid;
+  align-items: center;
+  border-radius: .5rem;
+  box-shadow: 0 2px 4px #cccccc;
+  padding: .5em;
 }
 </style>
