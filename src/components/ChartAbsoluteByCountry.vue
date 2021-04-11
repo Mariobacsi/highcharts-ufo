@@ -29,7 +29,7 @@ export default {
           text: 'Ufo-Ansichten pro Land, 1906 - 2017'
         },
         subtitle: {
-          text: 'Quelle: <a href="http://statcounter.com" target="_blank">statcounter.com</a>'
+          text: 'Quelle: <a href="https://raw.githubusercontent.com/planetsig/ufo-reports/master/csv-data/ufo-scrubbed-geocoded-time-standardized.csv" target="_blank">githubusercontent.com</a>'
         },
         accessibility: {
           announceNewData: {
