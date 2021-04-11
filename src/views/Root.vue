@@ -6,6 +6,7 @@
     <world-cloud class="card span-5" :data="allShapes()" ></world-cloud>
     <chart-by-country class="card span-3" :data="sightsCountry"></chart-by-country>
     <chart-absolute-by-country class="card span-2" :data="sightsCountry"></chart-absolute-by-country>
+    <chart-by-time class="card span-5" :data="sightsPerTime()"></chart-by-time>
   </div>
 </template>
 
@@ -16,10 +17,13 @@ import SightsPerMonth from "@/components/SightsPerMonth-Season";
 import WorldCloud from "@/components/WorldCloud";
 import ChartByCountry from "@/components/ChartByCountry";
 import ChartAbsoluteByCountry from "@/components/ChartAbsoluteByCountry";
+import ChartByTime from "@/components/ChartByTime";
 
 export default {
   name: "Root",
-  components: {ChartAbsoluteByCountry, ChartByCountry, WorldCloud, SightsPerMonth, SightsMap, AllSightsPerYear},
+  components: {
+    ChartByTime,
+    ChartAbsoluteByCountry, ChartByCountry, WorldCloud, SightsPerMonth, SightsMap, AllSightsPerYear},
   data() {
     return {
       data: [],
@@ -164,7 +168,34 @@ export default {
       console.debug("SightsPerMonth", result)
       return result
     },
+    sightsPerTime(){
+      let result = []
+      let time = []
+      let count = []
 
+      this.data.forEach(d => {
+        let m = parseInt(d.Stunde)
+        if (!time.includes(m)) {
+          time.push(m)
+          count.push(0)
+        }
+        count[time.indexOf(m)]++
+      })
+
+      for (let i = 0; i < time.length; i++) {
+        result.push([time[i], count[i]])
+      }
+
+      result.sort((a, b) => {
+        return a[0] < b[0]
+      })
+
+      let obj24 = result.splice(result.indexOf(24), 1)
+      result[result.indexOf(0)] += obj24[1]
+
+      console.debug("SightsPerHour", result)
+      return result
+    }
   }
 }
 </script>
