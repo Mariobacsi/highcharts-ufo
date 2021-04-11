@@ -45,12 +45,23 @@ export default {
     },
     sightsMap() {
       let result = []
-      let tmp = []
+      let year = []
+      let count = []
+      console.debug("createdAllSights",this.data)
 
       this.data.forEach(d => {
-        tmp.push[d.Land]
+        if (!year.includes(d.Jahr)) {
+          year.push(d.Jahr)
+          count.push(0)
+        }
+        count[year.indexOf(d.Jahr)] ++
       })
-      console.debug(tmp)
+
+      for(let i = 0; i < year.length; i++){
+        result.push([year[i], count[i]])
+      }
+      result.sort()
+      console.debug("AllSightsPerYear", result)
       return result
     }
   }

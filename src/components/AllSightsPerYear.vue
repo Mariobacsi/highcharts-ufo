@@ -2,9 +2,7 @@
   <figure className="highcharts-figure">
     <div id="AllSightsPerYear"></div>
     <p className="highcharts-description">
-      Pie charts are very popular for showing a compact overview of a
-      composition or comparison. While they can be harder to read than
-      column charts, they remain a popular choice for small datasets.
+
     </p>
   </figure>
 </template>
@@ -24,7 +22,7 @@ export default {
       Highchart.chart('AllSightsPerYear', {
 
         title: {
-          text: 'UFO Sichtungen pro Jahr, 1906-2014'
+          text: 'UFO Sichtungen in der Zeitspanne von 1906-2014'
         },
 
         subtitle: {
