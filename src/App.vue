@@ -25,7 +25,6 @@ export default {
       Axios.get(process.env.BASE_URL + 'daten.json')
           .then(result => {
             let data = result.data
-            console.debug(data)
             let regex = new RegExp("(\\d+)\\/(\\d+)\\/(\\d+) (\\d+):(\\d+)")
             data.forEach(e => {
               let match = regex.exec(e.Datum)
@@ -35,7 +34,6 @@ export default {
               e.Stunde = match[4]
               e.Minute = match[5]
             })
-            console.debug(data)
             this.$store.commit("setData", data)
           })
     }

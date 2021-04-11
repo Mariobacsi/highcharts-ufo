@@ -12,31 +12,31 @@ import SightsMap from "@/components/SightsMap";
 export default {
   name: "Root",
   components: {SightsMap, AllSightsPerYear},
-  data(){
+  data() {
     return {
       data: []
     }
   },
   created() {
     this.data = this.$store.getters.getdata
-    console.debug("created",this.data)
+    console.debug("created", this.data)
   },
   methods: {
     allSightsPerYear() {
       let result = []
       let year = []
       let count = []
-      console.debug("createdAllSights",this.data)
+      console.debug("createdAllSights", this.data)
 
       this.data.forEach(d => {
         if (!year.includes(d.Jahr)) {
           year.push(d.Jahr)
           count.push(0)
         }
-        count[year.indexOf(d.Jahr)] ++
+        count[year.indexOf(d.Jahr)]++
       })
 
-      for(let i = 0; i < year.length; i++){
+      for (let i = 0; i < year.length; i++) {
         result.push([year[i], count[i]])
       }
       result.sort()
@@ -45,23 +45,25 @@ export default {
     },
     sightsMap() {
       let result = []
-      let year = []
+      let code = []
       let count = []
-      console.debug("createdAllSights",this.data)
+      console.debug("createdAllSights", this.data)
 
       this.data.forEach(d => {
-        if (!year.includes(d.Jahr)) {
-          year.push(d.Jahr)
-          count.push(0)
-        }
-        count[year.indexOf(d.Jahr)] ++
+          if (!code.includes(d.Land)) {
+            code.push(d.Land)
+            count.push(0)
+          }
+          count[code.indexOf(d.Land)]++
       })
 
-      for(let i = 0; i < year.length; i++){
-        result.push([year[i], count[i]])
+      for (let i = 0; i < code.length; i++) {
+        result.push({
+          z: count[i],
+          code: code[i].toUpperCase()
+        })
       }
-      result.sort()
-      console.debug("AllSightsPerYear", result)
+      console.debug("SightsMap", result)
       return result
     }
   }

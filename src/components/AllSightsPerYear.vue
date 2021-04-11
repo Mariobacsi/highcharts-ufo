@@ -25,10 +25,6 @@ export default {
           text: 'UFO Sichtungen in der Zeitspanne von 1906-2014'
         },
 
-        subtitle: {
-          text: 'Quelle: https://github.com/planetsig/ufo-reports/blob/master/csv-data/ufo-complete-geocoded-time-standardized.csv'
-        },
-
         yAxis: {
           title: {
             text: 'Anzahl der UFO Sichtungen'

@@ -35,11 +35,7 @@ export default {
         },
 
         title: {
-          text: 'World population 2013 by country'
-        },
-
-        subtitle: {
-          text: 'Demo of Highcharts map with bubbles'
+          text: 'Orte der Ufo Sichtungen'
         },
 
         legend: {
