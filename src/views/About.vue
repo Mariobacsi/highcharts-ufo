@@ -5,8 +5,6 @@
   </div>
 </template>
 <script>
-import AllSightsPerYear from "../components/AllSightsPerYear";
 export default {
-  components: {AllSightsPerYear}
 }
 </script>
