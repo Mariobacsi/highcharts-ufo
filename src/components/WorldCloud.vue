@@ -54,6 +54,9 @@ export default {
         }],
         title: {
           text: 'Wortwolke der Beschreibung, 1906 - 2017'
+        },
+        subtitle: {
+          text: 'Quelle: <a href="https://raw.githubusercontent.com/planetsig/ufo-reports/master/csv-data/ufo-scrubbed-geocoded-time-standardized.csv" target="_blank">githubusercontent.com</a>'
         }
       })
     }
