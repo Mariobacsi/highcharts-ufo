@@ -1,9 +1,7 @@
 <template>
-  <div>
     <figure className="highcharts-figure">
       <div id="containerMaps"></div>
     </figure>
-  </div>
 </template>
 
 <script>

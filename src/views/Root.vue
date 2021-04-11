@@ -1,12 +1,12 @@
 <template>
   <div id="grid">
-    <all-sights-per-year class="card span-5" :data="allSightsPerYear()"></all-sights-per-year>
-    <sights-map class="card span-5" :data="sightsMap"></sights-map>
-    <sights-per-month class="card span-5" :data="sightsPerMonth()"></sights-per-month>
-    <world-cloud class="card span-5" :data="allShapes()" ></world-cloud>
+    <all-sights-per-year class="card span-6" :data="allSightsPerYear()"></all-sights-per-year>
+    <sights-map class="card span-6" :data="sightsMap"></sights-map>
+    <chart-absolute-by-country class="card span-3" :data="sightsCountry"></chart-absolute-by-country>
     <chart-by-country class="card span-3" :data="sightsCountry"></chart-by-country>
-    <chart-absolute-by-country class="card span-2" :data="sightsCountry"></chart-absolute-by-country>
-    <chart-by-time class="card span-5" :data="sightsPerTime()"></chart-by-time>
+    <sights-per-month class="card span-6" :data="sightsPerMonth()"></sights-per-month>
+    <chart-by-time class="card span-6" :data="sightsPerTime()"></chart-by-time>
+    <world-cloud class="card span-6" :data="allShapes()" ></world-cloud>
   </div>
 </template>
 
@@ -203,7 +203,7 @@ export default {
 <style scoped lang="scss">
 #grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-gap: .5em;
 }
 
@@ -225,5 +225,13 @@ export default {
 
 .span-5 {
   grid-column: span 5;
+}
+
+.span-6 {
+  grid-column: span 6;
+}
+
+.highcharts-figure, .highcharts-data-table table {
+  margin: 1em auto;
 }
 </style>
