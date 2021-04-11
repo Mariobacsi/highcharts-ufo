@@ -11,8 +11,8 @@
 import Highchart from 'highcharts/highcharts.js'
 
 export default {
-  name: "ChartByState",
-  props: ['data'], //[country, UFO-Ansichten]
+  name: "ChartAbsoluteByCountry",
+  props: ['data'], //[Land, UFO-Ansichten insgesamt pro Land]
   data() {
     return {}
   },
@@ -67,35 +67,8 @@ export default {
           {
             name: "Browsers",
             colorByPoint: true,
-            data: [
-              {
-                name: "USA",
-                y: 6200
-              },
-              {
-                name: "Australien",
-                y: 4000
-              },
-              {
-                name: "Kroatien",
-                y: 1500
-              },
-              {
-                name: "Kristianland",
-                y: 10000
-              },
-              {
-                name: "Frankreich",
-                y: 4000
-              },
-              {
-                name: "Österreich",
-                y: 1000
-              },
-              {
-                name: "Zimbabwe",
-                y: 500
-              }
+            data: [ //[Land, UFO-Ansichten insgesamt pro Land]
+              ["ad", 4000],["adsad", 4000],["addd", 1000],["aasd", 2000],["adasd", 500],["aasdd", 4000],["aasdd", 7000]
             ]
           }
         ]
