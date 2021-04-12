@@ -2,9 +2,7 @@
   <figure class="highcharts-figure">
     <div id="chartByCountry"></div>
     <p class="highcharts-description">
-      Pie charts are very popular for showing a compact overview of a
-      composition or comparison. While they can be harder to read than
-      column charts, they remain a popular choice for small datasets.
+      In diesem Kreisdiagramm werden die UFO-Ansichten pro Land in einem prozentuellen Vergleich dargelegt.
     </p>
   </figure>
 </template>
@@ -69,5 +67,8 @@ export default {
 </script>
 
 <style scoped>
-
+.highcharts-description{
+  text-align: left;
+  font-size: 18px;
+}
 </style>

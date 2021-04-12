@@ -2,7 +2,9 @@
   <figure class="highcharts-figure">
     <div id="chartByTime"></div>
     <p class="highcharts-description">
-      blabla
+      Dieses Balkendiagramm zeigt die Anzahl der UFO-Ansichten in der jeweiligen Uhrzeit. Hierbei erkennt man, dass die
+      meisten Sichtungen nachts erfolgen. Das lässt darauf schließen, dass die Sicht der jeweiligen Personen aufgrunde
+      der Dunkelheit verschlechtert werden könnte.
     </p>
   </figure>
 </template>
@@ -31,8 +33,7 @@ export default {
         subtitle: {
           text: 'Quelle: <a href="https://raw.githubusercontent.com/planetsig/ufo-reports/master/csv-data/ufo-scrubbed-geocoded-time-standardized.csv" target="_blank">githubusercontent.com</a>'
         },
-        xAxis: {
-        },
+        xAxis: {},
         yAxis: {
           title: {
             text: 'Anzahl der Ufo-Ansichten'
@@ -60,5 +61,8 @@ export default {
 </script>
 
 <style scoped>
-
+.highcharts-description{
+  text-align: left;
+  font-size: 18px;
+}
 </style>

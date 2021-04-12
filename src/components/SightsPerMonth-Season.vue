@@ -1,9 +1,6 @@
 <template>
     <figure className="highcharts-figure">
       <div id="containerSeason"></div>
-      <p class="highcharts-description">
-        blabla
-      </p>
     </figure>
 </template>
 

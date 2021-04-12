@@ -2,10 +2,11 @@
   <figure class="highcharts-figure">
     <div id="worldCloud"></div>
     <p class="highcharts-description">
-      Word clouds are used to visualize how often each word in a
-      text occurs. This example uses an excerpt from the popular
-      "Lorem Ipsum" text. Words that appear often will appear
-      larger.
+      In dieser Wortwolke wurden alle Wörter, die zur Beschreibung des Aussehens des UFOs benutzt wurden, beschrieben.
+      Desto öfter das Wort vorkam, desto größer wird das Wort hier angezeigt. Besonder oft kamen die Wörter "light" oder
+      "fireball" vor, die wahrscheinlich wegen der hauptsächlichen nächtlichen Sichtungen einen starken Kontrast
+      lieferten, weshalb
+      diese Beschreibung besonders oft vorkam.
     </p>
   </figure>
 </template>
@@ -29,7 +30,7 @@ export default {
         series: [{
           type: 'wordcloud',
           data: this.data,
-          name: 'Occurrences'
+          name: 'Beschreibungen'
         }],
         title: {
           text: 'Wortwolke der Beschreibung, 1906 - 2017'
@@ -44,5 +45,8 @@ export default {
 </script>
 
 <style scoped>
-
+.highcharts-description {
+  text-align: left;
+  font-size: 18px;
+}
 </style>

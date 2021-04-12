@@ -2,7 +2,8 @@
   <figure class="highcharts-figure">
     <div id="absoluteByState"></div>
     <p class="highcharts-description">
-      blabla
+      Dieses Balkendiagramm zeigt die Anzahl der UFO-Ansichten pro Land. Dabei wird besonders der Unterschied zwischen
+      der USA und den anderen Ländern bemerkbar gemacht und lässt auf einen eingeschränkten Datenzugang schließen.
     </p>
   </figure>
 </template>
@@ -78,5 +79,8 @@ export default {
 </script>
 
 <style scoped>
-
+.highcharts-description{
+  text-align: left;
+  font-size: 18px;
+}
 </style>
