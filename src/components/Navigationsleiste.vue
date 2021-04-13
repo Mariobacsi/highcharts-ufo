@@ -19,9 +19,11 @@ name: "Navigationsleiste"
 
 <style scoped lang="scss">
 #nav {
-  box-shadow: 2px 2px 40px 0;
+  box-shadow: 2px 2px 10px 0;
   margin-bottom: 30px;
   position:fixed;
+  left: 0;
+  top: 0;
   z-index:10;
   width: 100%;
   background-color: #ffffff;
@@ -31,10 +33,12 @@ name: "Navigationsleiste"
 
   a {
     font-weight: bold;
-    color: #2c3e50;
+    color: #000000;
+    text-decoration: none;
+    padding-left: 20px;
 
     &.router-link-exact-active {
-      color: #42b983;
+      color: #2d2e83;
     }
   }
 }

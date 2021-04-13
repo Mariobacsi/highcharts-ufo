@@ -29,6 +29,7 @@
 **Sonstige:**
 * Layout
 * Design
+* Logo
 * Interpretation bzw. Beschreibung der Diagramme.
 
 # Marco Rudnick
