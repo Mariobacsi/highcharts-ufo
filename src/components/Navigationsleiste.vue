@@ -1,11 +1,11 @@
 <template>
   <nav id="nav">
     <div id="logo">
-      <img src="../../src/assets/ufo-logo.png" height="50px">
+      <router-link to="/"><img src="../../src/assets/ufo-logo.png" height="50px"></router-link>
     </div>
     <div id="links">
-      <router-link to="/home">Home</router-link>
-      <router-link to="/">Statistiken</router-link>
+      <router-link to="/">Home</router-link>
+      <router-link to="/statistics">Statistiken</router-link>
     </div>
 
   </nav>
@@ -19,8 +19,7 @@ name: "Navigationsleiste"
 
 <style scoped lang="scss">
 #nav {
-  box-shadow: 2px 2px 10px 0;
-  margin-bottom: 30px;
+  box-shadow: 0 2px 4px #cccccc;
   position:fixed;
   left: 0;
   top: 0;

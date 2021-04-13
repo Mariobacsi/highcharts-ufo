@@ -47,6 +47,7 @@ export default {
 </script>
 
 <style>
+
 .scroll-container {
   padding-top: 60px;
   height: 100vh;
