@@ -37,7 +37,7 @@ export default {
         yAxis: {
           min: 0,
           title: {
-            text: 'Sightings (millions)'
+            text: 'Sichtungen'
           }
         },
         tooltip: {
@@ -45,16 +45,20 @@ export default {
         },
         series: [{
           name: 'UFO Sichtungen',
-          /**
-           * [
-           *  [monat, anz],
-           *  [monat, anz],
-           *  [monat, anz],
-           *  [monat, anz],
-           *  ...
-           * ]
-           */
-          data: this.dataC,
+          data: [
+            ["Januar", this.dataC[0][1]],
+            ["Februar", this.dataC[1][1]],
+            ["März", this.dataC[2][1]],
+            ["April", this.dataC[3][1]],
+            ["Mai", this.dataC[4][1]],
+            ["Juni", this.dataC[5][1]],
+            ["Juli", this.dataC[6][1]],
+            ["August", this.dataC[7][1]],
+            ["September", this.dataC[8][1]],
+            ["Oktober", this.dataC[9][1]],
+            ["November", this.dataC[10][1]],
+            ["Dezember", this.dataC[11][1]]
+          ],
           dataLabels: {
             enabled: true,
             rotation: -90,
