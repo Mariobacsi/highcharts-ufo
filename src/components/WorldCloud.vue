@@ -3,7 +3,7 @@
     <div id="worldCloud"></div>
     <p class="highcharts-description">
       In dieser Wortwolke wurden alle Wörter, die zur Beschreibung des Aussehens des UFOs benutzt wurden, beschrieben.
-      Desto öfter das Wort vorkam, desto größer wird das Wort hier angezeigt. Besonder oft kamen die Wörter "light" oder
+      Je öfter das Wort vorkam, desto größer wird das Wort hier angezeigt. Besonders oft kamen die Wörter "light" oder
       "fireball" vor, die wahrscheinlich wegen der hauptsächlichen nächtlichen Sichtungen einen starken Kontrast
       lieferten, weshalb
       diese Beschreibung besonders oft vorkam.
@@ -45,8 +45,5 @@ export default {
 </script>
 
 <style scoped>
-.highcharts-description {
-  text-align: left;
-  font-size: 18px;
-}
+
 </style>

@@ -1,7 +1,12 @@
 <template>
-    <figure className="highcharts-figure">
-      <div id="containerMaps"></div>
-    </figure>
+  <figure className="highcharts-figure">
+    <div id="containerMaps"></div>
+    <p class="highcharts-description">
+      Auf dieser Weltkarte ist dargestellt, wo UFOs gesichtet wurden. Es ist zu sehen, dass in den USA die UFOs vermerkt
+      wurden. Der Grund dafür kann sein, dass die USA als einer der freisten und fortschrittlichsten Länder gilt und man
+      deshalb auch alle Unbekannte Flugobjekte aufzeichnet.
+    </p>
+  </figure>
 </template>
 
 <script>

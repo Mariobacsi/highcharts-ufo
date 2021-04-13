@@ -201,7 +201,11 @@ export default {
 </script>
 
 <style scoped lang="scss">
+
+
+
 #grid {
+  padding-top: 60px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-gap: .5em;

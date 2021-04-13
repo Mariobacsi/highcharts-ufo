@@ -1,19 +1,17 @@
 <template>
   <div id="app">
-    <nav id="nav">
-      <router-link to="/">Home</router-link>
-      |
-      <router-link to="/about">About</router-link>
-    </nav>
+    <navigationsleiste></navigationsleiste>
     <router-view/>
   </div>
 </template>
 
 <script>
 import Axios from 'axios'
+import Navigationsleiste from "@/components/Navigationsleiste";
 
 export default {
   name: 'App',
+  components: {Navigationsleiste},
   created() {
     this.loadJSON()
   },
@@ -43,9 +41,19 @@ export default {
 </script>
 
 <style lang="scss">
+
+html{
+  width: 100%;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+#test{
+  width: 100%;
+  background-color: #42b983;
+}
 
 body {
   background: #eeeeee;
@@ -59,18 +67,6 @@ body {
   color: #2c3e50;
 }
 
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
 
 .card {
   background: #ffffff;
@@ -82,5 +78,12 @@ body {
   box-shadow: 0 2px 4px #cccccc;
   padding: .5em;
   width: 95%;
+}
+.highcharts-description {
+  border-top-style: solid;
+  border-color: #95CEFF;
+  padding-top: 20px;
+  text-align: left;
+  font-size: 18px;
 }
 </style>
