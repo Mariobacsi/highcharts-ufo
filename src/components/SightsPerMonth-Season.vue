@@ -1,7 +1,13 @@
 <template>
-    <figure className="highcharts-figure">
-      <div id="containerSeason"></div>
-    </figure>
+  <figure className="highcharts-figure">
+    <div id="containerSeason"></div>
+    <p class="highcharts-description">
+      In diesem Balkendiagramm wird dargestellt, ob UFOs bestimmte Jahreszeitan haben, in denen sie sich eher zeigen.
+      Aus der Grafik kann entnommen werden, dass die meisten UFOs im Sommer und Herbst beobachtet werden. Ein Grund
+      dafür ist, dass im Sommer und Herbst gehen Menschen eher aus dem Haus als im Winter. So können auch mehr UFOs
+      gesichtet werden.
+    </p>
+  </figure>
 </template>
 
 <script>

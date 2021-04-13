@@ -50,11 +50,6 @@ html{
 @tailwind components;
 @tailwind utilities;
 
-#test{
-  width: 100%;
-  background-color: #42b983;
-}
-
 body {
   background: #eeeeee;
 }
