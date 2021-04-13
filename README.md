@@ -1,3 +1,7 @@
+#DISCLAIMER
+Wir haben mit dem Projekt begonnen, bevor uns mitgeteilt wurde, dass die Anwendung per Klick auf die index.html funktionieren soll.
+Wir benutzten das Framework Vue. Deswegen muss das Projekt in der IDE geöffnet werden und per "npm install" und "npm serve" gestartet werden.
+
 # Mario Seidl
 ###Daten Aufbereitet
 * All Sights Per Year
